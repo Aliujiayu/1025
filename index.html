@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url:"http://localhost:3000/",
+			type:"POST",
+			data:{"name":1},
+			success:function (e) {
+				for (var i = 0; i<e.length; i++) {
+					var num=e[i];
+					for (var k=0; k<num.length; k++) {
+						$('.box').append('<h1>'+num[k]+'</h1>');
+					}
+				}
+			}
+		})
+	})
+		
+</script>
+</html>
